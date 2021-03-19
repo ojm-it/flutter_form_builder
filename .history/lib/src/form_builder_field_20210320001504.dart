@@ -119,10 +119,10 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
     _formBuilderState?.registerField(widget.name, this);
     // Register a touch handler
     _focusNode = widget.focusNode ?? FocusNode();
-    print('created focus node');
     _focusNode!.addListener(_touchedHandler);
     // Set the initial value
     setValue(initialValue);
+    print('called focus node');
   }
 
   @override
@@ -133,7 +133,6 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
       _focusNode!.dispose();
     }
     _formBuilderState?.unregisterField(widget.name, this);
-    print('disposed focus node');
     super.dispose();
   }
 
