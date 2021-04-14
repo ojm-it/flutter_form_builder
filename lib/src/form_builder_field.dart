@@ -180,7 +180,13 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
   }
 
   void requestFocus() {
-    FocusScope.of(context).requestFocus(effectiveFocusNode);
+    ///This is a cheap fix
+    try {
+      FocusScope.of(context).requestFocus(effectiveFocusNode);
+    } catch (error) {
+      print('That error again ...');
+      print(error);
+    }
   }
 
   //  FIXME: This  could be a getter instead of a classic function
