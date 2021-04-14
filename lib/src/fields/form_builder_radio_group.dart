@@ -73,6 +73,7 @@ class FormBuilderRadioGroup<T> extends FormBuilderField<T> {
 
             return InputDecorator(
               decoration: state.decoration(),
+              //TODO  add focus node
               child: GroupedRadio<T>(
                 orientation: orientation,
                 value: state.value,

@@ -111,7 +111,7 @@ class FormBuilderCheckbox extends FormBuilderField<bool> {
           focusNode: focusNode,
           builder: (FormFieldState<bool?> field) {
             final state = field as _FormBuilderCheckboxState;
-
+            //TODO add focus node
             return InputDecorator(
               decoration: state.decoration(),
               child: CheckboxListTile(

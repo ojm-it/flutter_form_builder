@@ -124,7 +124,7 @@ class FormBuilderSwitch extends FormBuilderField<bool> {
           focusNode: focusNode,
           builder: (FormFieldState<bool?> field) {
             final state = field as _FormBuilderSwitchState;
-
+            //TODO add focusnode
             return InputDecorator(
               decoration: state.decoration(),
               child: SwitchListTile(

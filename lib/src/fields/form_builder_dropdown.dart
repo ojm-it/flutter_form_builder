@@ -250,6 +250,7 @@ class FormBuilderDropdown<T> extends FormBuilderField<T> {
                   Expanded(
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<T>(
+                        focusNode: state.effectiveFocusNode,
                         isExpanded: isExpanded,
                         hint: hint,
                         items: items,
@@ -272,7 +273,6 @@ class FormBuilderDropdown<T> extends FormBuilderField<T> {
                             ? (value) => changeValue(value)
                             : null,
                         onTap: onTap,
-                        focusNode: state.effectiveFocusNode,
                         autofocus: autofocus,
                         dropdownColor: dropdownColor,
                         focusColor: focusColor,

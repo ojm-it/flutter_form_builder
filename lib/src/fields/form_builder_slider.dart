@@ -183,6 +183,7 @@ class FormBuilderSlider extends FormBuilderField<double> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Slider(
+                      focusNode: state.effectiveFocusNode,
                       value: field.value!,
                       min: min,
                       max: max,
@@ -201,7 +202,6 @@ class FormBuilderSlider extends FormBuilderField<double> {
                           : null,
                       autofocus: autofocus,
                       mouseCursor: mouseCursor,
-                      focusNode: state.effectiveFocusNode,
                     ),
                     Row(
                       children: <Widget>[

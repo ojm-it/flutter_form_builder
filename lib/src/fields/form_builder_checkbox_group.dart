@@ -77,6 +77,7 @@ class FormBuilderCheckboxGroup<T> extends FormBuilderField<List<T>> {
 
             return InputDecorator(
               decoration: state.decoration(),
+              //TODO add focus node
               child: GroupedCheckbox<T>(
                 orientation: orientation,
                 value: state.value,
