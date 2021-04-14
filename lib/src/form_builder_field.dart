@@ -129,12 +129,11 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
   void dispose() {
     _focusNode!.removeListener(_touchedHandler);
     // Dispose focus node when created by initState
-    if (widget.focusNode == null) {
+    if (null == widget.focusNode) {
       _focusNode!.dispose();
     }
     _formBuilderState?.unregisterField(widget.name, this);
     print('disposed focus node');
-
     super.dispose();
   }
 
@@ -180,8 +179,7 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
   }
 
   void requestFocus() {
-    print('Requesting focus...');
-    if (mounted) FocusScope.of(context).requestFocus(effectiveFocusNode);
+    //FocusScope.of(context).requestFocus(effectiveFocusNode);
   }
 
   //  FIXME: This  could be a getter instead of a classic function
