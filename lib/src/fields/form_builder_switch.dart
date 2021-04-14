@@ -124,32 +124,36 @@ class FormBuilderSwitch extends FormBuilderField<bool> {
           focusNode: focusNode,
           builder: (FormFieldState<bool?> field) {
             final state = field as _FormBuilderSwitchState;
-            //TODO add focusnode
-            return InputDecorator(
-              decoration: state.decoration(),
-              child: SwitchListTile(
-                dense: true,
-                isThreeLine: false,
-                contentPadding: contentPadding,
-                title: title,
-                value: state.value!,
-                onChanged: state.enabled
-                    ? (val) {
-                        state.requestFocus();
-                        field.didChange(val);
-                      }
-                    : null,
-                activeColor: activeColor,
-                activeThumbImage: activeThumbImage,
-                activeTrackColor: activeTrackColor,
-                inactiveThumbColor: inactiveThumbColor,
-                inactiveThumbImage: activeThumbImage,
-                inactiveTrackColor: inactiveTrackColor,
-                secondary: secondary,
-                subtitle: subtitle,
-                autofocus: autofocus,
-                selected: selected,
-                controlAffinity: controlAffinity,
+            return Focus(
+              canRequestFocus: enabled,
+              focusNode: state.effectiveFocusNode,
+              autofocus: autofocus,
+              child: InputDecorator(
+                decoration: state.decoration(),
+                child: SwitchListTile(
+                  dense: true,
+                  isThreeLine: false,
+                  contentPadding: contentPadding,
+                  title: title,
+                  value: state.value!,
+                  onChanged: state.enabled
+                      ? (val) {
+                          state.requestFocus();
+                          field.didChange(val);
+                        }
+                      : null,
+                  activeColor: activeColor,
+                  activeThumbImage: activeThumbImage,
+                  activeTrackColor: activeTrackColor,
+                  inactiveThumbColor: inactiveThumbColor,
+                  inactiveThumbImage: activeThumbImage,
+                  inactiveTrackColor: inactiveTrackColor,
+                  secondary: secondary,
+                  subtitle: subtitle,
+                  autofocus: autofocus,
+                  selected: selected,
+                  controlAffinity: controlAffinity,
+                ),
               ),
             );
           },
