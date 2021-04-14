@@ -180,6 +180,7 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
   }
 
   void requestFocus() {
+    print('Requesting focus...');
     if (mounted) FocusScope.of(context).requestFocus(effectiveFocusNode);
   }
 
