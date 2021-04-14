@@ -179,7 +179,6 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
   }
 
   void requestFocus() {
-    //TODO FIX THIS
     FocusScope.of(context).requestFocus(effectiveFocusNode);
   }
 

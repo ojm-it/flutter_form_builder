@@ -111,29 +111,33 @@ class FormBuilderCheckbox extends FormBuilderField<bool> {
           focusNode: focusNode,
           builder: (FormFieldState<bool?> field) {
             final state = field as _FormBuilderCheckboxState;
-            //TODO add focus node
-            return InputDecorator(
-              decoration: state.decoration(),
-              child: CheckboxListTile(
-                dense: true,
-                isThreeLine: false,
-                title: title,
-                subtitle: subtitle,
-                value: state.value,
-                onChanged: state.enabled
-                    ? (val) {
-                        state.requestFocus();
-                        state.didChange(val);
-                      }
-                    : null,
-                checkColor: checkColor,
-                activeColor: activeColor,
-                secondary: secondary,
-                controlAffinity: controlAffinity,
-                autofocus: autofocus,
-                tristate: tristate,
-                contentPadding: contentPadding,
-                selected: selected,
+            return Focus(
+              canRequestFocus: enabled,
+              focusNode: focusNode,
+              autofocus: autofocus,
+              child: InputDecorator(
+                decoration: state.decoration(),
+                child: CheckboxListTile(
+                  dense: true,
+                  isThreeLine: false,
+                  title: title,
+                  subtitle: subtitle,
+                  value: state.value,
+                  onChanged: state.enabled
+                      ? (val) {
+                          state.requestFocus();
+                          state.didChange(val);
+                        }
+                      : null,
+                  checkColor: checkColor,
+                  activeColor: activeColor,
+                  secondary: secondary,
+                  controlAffinity: controlAffinity,
+                  autofocus: autofocus,
+                  tristate: tristate,
+                  contentPadding: contentPadding,
+                  selected: selected,
+                ),
               ),
             );
           },
